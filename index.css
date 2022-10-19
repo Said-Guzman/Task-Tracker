@@ -11,8 +11,8 @@ html, body{
 h1{
     text-align: center;
     font-size: 40px;
-    color: blueviolet;
-    text-shadow: -1px 1px aqua;
+    color: slateblue;
+    text-shadow: -1px 1px darkmagenta;
 }
 /* connected to text box and submit button */
 form{
@@ -29,12 +29,17 @@ form{
 /* controls the text box */
 #task-input{
 width: 40%;
+height: 20%;
 border: none;
 background-color: lightcoral;
-font-size: 40px;
+font-size: 30px;
 border-radius: 10px;
 }
-
+input[type="text"], text{
+    background-color: black;
+    color: slateblue;
+    text-shadow: 1px -1px darkmagenta;
+}
 /* is connected to task-submit */
 @keyframes bubble{
     0%  {font-size: 20px;}
@@ -49,11 +54,11 @@ border-radius: 10px;
 .tasks{
     padding: 5px;
     margin: 10px 0;
-    gap: 10px;
+    gap: 5px;
+    color: slateblue;
+    text-shadow: 1px -1px darkmagenta;
 }
-.delete{
-    gap: 50px;
-}
+
 
 .task-track{
     display: flex;
@@ -61,10 +66,12 @@ border-radius: 10px;
     margin: 10px;
 
 }
-
+i::before{
+    content: 'delete';
+}
 i{
     float: right;
-    color: indigo;
+    color: red;
     cursor: pointer;
 }
 
