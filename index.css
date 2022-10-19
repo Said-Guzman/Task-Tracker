@@ -22,8 +22,9 @@ form{
 }
 /* attached to the button "Add TO List" */
 #task-submit{
-    
     animation: bubble 2s infinite alternate;
+    background-color: lightcoral;
+    border: none;
 } 
 /* controls the text box */
 #task-input{
@@ -45,12 +46,27 @@ border-radius: 10px;
     animation-play-state: paused;
 }
 
+.tasks{
+    padding: 5px;
+    margin: 10px 0;
+    gap: 10px;
+}
+.delete{
+    gap: 50px;
+}
 
+.task-track{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
 
+}
 
-
-
-
+i{
+    float: right;
+    color: indigo;
+    cursor: pointer;
+}
 
 
 
