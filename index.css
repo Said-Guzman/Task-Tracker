@@ -22,8 +22,7 @@ form{
 }
 /* attached to the button "Add TO List" */
 #task-submit{
-    border: none;
-    background-color: transparent;
+    
     animation: bubble 2s infinite alternate;
 } 
 /* controls the text box */
