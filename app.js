@@ -1,126 +1,39 @@
-//UI elements
-const taskInput = document.querySelector('#task-input')
-const form = document.querySelector('#task-form')
-const taskSubmit = document.querySelector("#task-submit")
-const taskList = document.getElementById('tasks') 
+
+fetch("http://127.0.0.1:5500")
+.then((response) => {
+    response.json();
+  })
+  .then((data) => {
+    console.log(data);
+  });
+
+data[0].id;
 
 
-allEventListeners()
+const express = require("express");
+const { parse } = require("path");
+const router = express.Router()
+const uuid = require("uuid")
 
-function allEventListeners(){
+let app = require ("./data.json")
 
-    //DOM Content Loader
-   document.addEventListener('DOMContentLoaded', getTasks)
+router.get("/", (req, res) => {
+    res.json(app)
+})
+// calling and routing it here to grab info from json
+router.get("/:id",(req, res) => {
+    const found = app.some(item => item.id === parseInt(req.params.id))
 
-    //add task
-    form.addEventListener('submit', addTask)
-
-    //remove task
-    taskList.addEventListener('click',removeTask)
+if(found){
+    res.json(items.filter(item => item.id === parseInt(req.params.id)))
+}else{
+    res.sendStatus(400);
 }
+})
+
+router.post("/", (req,res) => {
     
-//get task from local storage
-function getTasks(){
-    let tasks;
-    if (localStorage.getItem('tasks')=== null){
-        tasks = []
-    }
-    else{
-        tasks = JSON.parse(localStorage.getItem('tasks'))
-    }
-    for (let task of tasks){
-         // create li element
-         const li = document.createElement("li");
-         li.className = 'tasks-item';
-         li.appendChild(document.createTextNode(task));
- 
-         //create an element
-         const a = document.createElement('a')
-         a.className = 'Delete'
-         a.innerHTML = ' &nbsp &nbsp <i></i>'
- 
-         li.appendChild(a)
-  
-         //append li to ul 
-         taskList.append(li);
-    };
-};
-
-
-
-
-// adds tasks
-function addTask(e){
-    if(taskInput.value === ""){
-        alert('Add a Task Please');
-            return;
-            
-} 
-        // create li element
-        const li = document.createElement("li");
-        li.className = 'tasks-item';
-        li.appendChild(document.createTextNode(taskInput.value));
-
-        //create an element
-        const a = document.createElement('a')
-        a.className = 'Delete'
-        a.innerHTML = ' &nbsp &nbsp <i></i>'
-
-        li.appendChild(a)
- 
-        //append li to ul 
-        taskList.append(li)
-
-
-        //add task to local storage
-       addlocal(taskInput.value)
-
-
-        e.preventDefault()
-    
-}
-
-function addlocal(task){
-    let tasks;
-    if (localStorage.getItem('tasks')=== null){
-        tasks = []
-    }
-    else{
-        tasks = JSON.parse(localStorage.getItem('tasks'))
-    }
-    tasks.push(task)
-    localStorage.setItem('tasks', JSON.stringify(tasks))
-}
-  
-
-
-function removeTask(e){
-   if(e.target.parentElement.classList.contains('Delete')){
-    e.target.parentElement.parentElement.remove()
-
-    //remove from local storage
-    removelocal(e.target.parentElement.parentElement)
-   } 
-}
- 
-//  remove from the local storage
-function removelocal(taskPart){
-    let tasks;
-    if (localStorage.getItem('tasks')=== null){
-        tasks = []
-    }
-    else{
-        tasks = JSON.parse(localStorage.getItem('tasks'))
-    }
-    tasks.forEach(function(task, index){
-        if(taskPart.textContent === task){
-            tasks.splice(index, 1)
-        }
-        localStorage.setItem('tasks', JSON.stringify(task))
-    })
-}
-  
-
+})
 
 
 
