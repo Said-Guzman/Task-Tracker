@@ -1,6 +1,6 @@
 import fs from "fs"
 import express from "express"
-import axios from "axios"
+// import axios from "axios"
 
 
 const app = express()
@@ -19,7 +19,7 @@ app.listen(4000, (err) =>{
 })
 
  
-module.exports = "/data.json"
+// module.exports = "./data.json"
 
 
 
