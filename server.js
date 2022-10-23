@@ -19,7 +19,7 @@ app.listen(4000, (err) =>{
 })
 
  
-// module.exports = "./data.json"
+
 
 
 
