@@ -1,8 +1,9 @@
 import fs from "fs"
 import express from "express"
+import cors from "cors"
 
 const app = express()
-
+app.use(cors())
 const baseData = fs.readFile("./data.json", (err, data) => {
     console.log(JSON.parse(data))
 })
