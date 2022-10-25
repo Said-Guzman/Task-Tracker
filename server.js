@@ -4,6 +4,7 @@ import cors from "cors"
 
 const app = express()
 app.use(cors())
+
 const baseData = fs.readFile("./data.json", (err, data) => {
     console.log(JSON.parse(data))
 })
@@ -14,6 +15,7 @@ app.get("/", (req, res) => {
         res.json(JSON.parse(data))
     })
 })
+
 
 
 app.listen(4000, (err) => {

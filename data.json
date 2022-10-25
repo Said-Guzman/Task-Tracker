@@ -1,5 +1,7 @@
-[{
+[
+  {
   "id": 1,
   "description": "Take out the trash",
   "completionStatus": false
-}]
+}
+]
