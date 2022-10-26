@@ -113,12 +113,17 @@ function removeTask(e){
  function removeLocal(taskItem){
     let tasks
     if(localStorage.getItem('tasks') === null){
-        'tasks' = []
+        tasks = []
     }
     else{
-        'tasks' = JSON.parse(localStorage.getItem(tasks))
+        tasks = JSON.parse(localStorage.getItem('tasks'))
     }
-    
+    tasks.forEach(function(task, index){
+        if(taskItem.textContent === tasks){
+            task.splice(index, 1)
+        }
+        localStorage.removeItem('tasks', JSON.stringify(tasks))
+    })
 
  }
 
