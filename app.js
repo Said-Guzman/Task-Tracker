@@ -49,25 +49,25 @@ async function main() {
 
  
             //append li to ul 
-            // taskList.append(li)
-        taskSubmit.addEventListener('click', function(){
-            if(taskInput.value === ""){ 
-                    return}
-                     
-            data = {
-                "description":taskInput.value
-            }
-            theTask.innertext = JSON.stringify(data)
-        })
-    
-    
+            taskList.append(li)
+      
 
+async function posting(){
+        const data = taskInput.value
+        const options = {
+            method: 'POST',
+            Headers:{
+                'Content-Type': 'application/json'
+            }, 
+            body: JSON.stringify(data)
+        }
+ 
+       await fetch('/', options)}
 
-
-
+            posting()
 
             e.preventDefault()
-
+}
 
 
 
@@ -81,7 +81,7 @@ async function main() {
             } 
          }
 
-
+         
 
     // Replace this
     // var list = document.createElement("li");
@@ -93,6 +93,25 @@ async function main() {
     // for (let d of data) {
     //     addTask(d.description)
     // }
-}
 
 main();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
