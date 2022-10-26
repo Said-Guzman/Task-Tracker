@@ -125,6 +125,14 @@ function removeTask(e){
         localStorage.removeItem('tasks', JSON.stringify(tasks))
     })
 
+        tasks.forEach(function(task, index){
+        if(taskItem.textContent === tasks){
+            task.splice( index, 1)
+        localStorage.removeItem('tasks', JSON.stringify(tasks))
+
+
+    }})
+
  }
 
 
