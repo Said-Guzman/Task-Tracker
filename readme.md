@@ -11,10 +11,11 @@ I have 2 versions of the project
 
 -- Deployed Version -- 
 
+----- This version took me 2 days to make but it all was based on how I wanted everything to work because I like to know what means what and then make a note of what it does or what it's used for. I only have a bug and that bug is that it deletes whenever I delete one item, I will revisit this project and fix those issues because I really want to make this project work.
 
+-- The Non-Deployed Version | The API way --
 
-
-
+----- This was probably the most difficult task that I have encountered when coding because it was so new to me that I didn't know where to look for info, thankfully my mentor helped me out, he gave me a boost in the right direction but I wasn't able to finish the job as I couldn't find the right info that would help me but I won't let that L get to me because I will come back and finish this project out the right way.
 
 
 
