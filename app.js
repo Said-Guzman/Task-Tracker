@@ -93,18 +93,17 @@ function addTask(e){
             localStorage.setItem('tasks', JSON.stringify(tasks))
         }   
 
-
+//remove task from html
 function removeTask(e){
    if(e.target.parentElement.classList.contains('delete')){
     e.target.parentElement.parentElement.remove()
 
+    // begin taking from local storage specifically 
     removeLocal(e.target.parentElement.parentElement)
 
    } 
 }
-    function clearTask(){
-        taskList.innerHTML = ''
-    }
+
 
 
 
